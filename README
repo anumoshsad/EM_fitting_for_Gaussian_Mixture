@@ -1,0 +1,50 @@
+Name: Shouman Das
+Email: shouman.das@rochester.edu
+Course: CSC446
+Homework: HW7
+Implement EM fitting of a mixture of gaussians on the two-dimensional data set points.dat. Try different numbers of mixtures, as well as tied vs. separate covariance matrices for each gaussian.
+
+************ Files *********
+
+das_shouman_hw7.py
+README
+points.dat
+Dev_separate_cov.png
+Training_separate_cov.png
+Dev_tied_cov.png
+Training_tied_cov.png
+scatter.png
+Scatter_4_clusters.png
+
+******** Algorithm **********
+
+We implement Expecatation Maximization algorithm for the Gaussian mixture model for two dimensional points data set. 
+
+
+******** Instructions *******
+
+The main algorithm is has two parts: E_step and M_step.
+In our implementation, we first initialize all the means and mixing coefficient randomly and choose the covariances as identity matrix. Then we iterate over the E_step and M_step.
+
+We run our program twice and compare loglikelihood for tied vs separate covariance. 
+
+**** NOTE!! ****
+Each time a plot is drawn by matplotlib.plt, we have to close the window to proceed further in the code.
+The folder must contain the points.dat file to run the code.
+
+************ Results *******
+
+From the scatterplot, it is noticable that there are at least 4 clusters in the data. From our loglikelihood plot, we see that we get the highest dev loglikelihood whenever number of clusters is around 4 to 7. 
+As for the number of iterations, we can notice that 30-40 iterations is enough to avoid overfitting.
+
+
+************ My interpretation **** 
+
+For the separate covariance case, we get the highest dev logliklihood whenever the number of clusters, K is 4 or 6.
+For the tied covariance case, this number is also around 6 or 7. But this time the curves become flatter very quickly.
+Also, from the scatterplot we can deduce that using separate covariance is more robust than tied covariance.
+
+
+************ References ************
+1. Lecture Notes(https://www.cs.rochester.edu/~gildea/2018_Spring/notes.pdf)
+2.  Book: Bishop, Christopher, Pattern Recognition and Machine Learning (chapter 9)
